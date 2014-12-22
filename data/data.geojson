@@ -1,0 +1,115 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "10030010",
+        "Rval": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.8814123234448,30.4980010455544]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "10970003",
+        "Rval": "0.863301991695878"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.0875263893214,30.7699408526854]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "10972005",
+        "Rval": "0.8596665276186"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.1411401036561,30.4746735857169]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "120330004",
+        "Rval": "0.885239867596506"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.20355,30.525367]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "120330004",
+        "Rval": "0.885239867596506"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.20355,30.525367]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "120330018",
+        "Rval": "0.843209683137518"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.270967,30.3680500008235]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "120330018",
+        "Rval": "0.843209683137518"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.270967,30.3680500008235]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "121130015",
+        "Rval": "0.868825546560106"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.008033,30.394133000824]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "121130015",
+        "Rval": "0.868825546560106"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.008033,30.394133000824]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "siteid": "280590006",
+        "Rval": "0.806770040693248"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.5339296135032,30.3782867218264]
+      }
+    }
+  ]
+}

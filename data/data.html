@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>data</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		html, body, #map {
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="map"></div>
+	<script type="text/javascript">
+		var map = L.map('map');
+
+		// base layer
+		var baseMaps = {};
+		var baseMap = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {"attribution":"&copy; <a href=\"http://openstreetmap.org/copyright\", target=\"_blank\">OpenStreetMap contributors</a>"});
+		baseMap.addTo(map);
+		baseMaps["OpenStreetMap"] = baseMap;
+		var baseMap = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/{type}/{z}/{x}/{y}.png', {"subdomains":"1234","type":"sat","maxZoom":11,"attribution":"Tiles &copy; <a href=\"http://www.mapquest.com\", target=\"_blank\">MapQuest</a>, Imagery &copy; NASA/JPL-Caltech and USDA Farm Service Agency"});
+		baseMap.addTo(map);
+		baseMaps["MapQuest Open Aerial"] = baseMap;
+		var baseMap = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', {"attribution":"Tiles &copy; <a href=\"http://thunderforest.com\", target=\"_blank\">Thunderforest</a>, Map data &copy; <a href=\"http://openstreetmap.org/copyright\", target=\"_blan\">OpenStreetMap contributors</a>"});
+		baseMap.addTo(map);
+		baseMaps["Thunderforest Landscape"] = baseMap;
+		
+		// layer control
+		L.control.layers(baseMaps).addTo(map);
+
+		// data layers
+        var fitBounds = true; 		
+		function addDataToMap(data, style) {
+			var dataLayer = L.geoJson(data, {
+				onEachFeature: (typeof onEachFeature == "undefined")? undefined: onEachFeature,
+				pointToLayer: function (feature, latlng) {return L.circleMarker(latlng);},
+				style: style,
+			});
+			dataLayer.addTo(map);
+			
+			if (fitBounds) {
+				map.fitBounds(dataLayer.getBounds());
+				fitBounds = false;
+			}
+		};
+		
+		if (typeof style1 == "undefined") style1 = undefined;
+		addDataToMap({
+		  "type": "FeatureCollection",
+		  "features": [
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "10030010",
+		        "Rval": "1"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.8814123234448,30.4980010455544]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "10970003",
+		        "Rval": "0.863301991695878"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-88.0875263893214,30.7699408526854]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "10972005",
+		        "Rval": "0.8596665276186"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-88.1411401036561,30.4746735857169]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "120330004",
+		        "Rval": "0.885239867596506"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.20355,30.525367]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "120330004",
+		        "Rval": "0.885239867596506"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.20355,30.525367]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "120330018",
+		        "Rval": "0.843209683137518"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.270967,30.3680500008235]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "120330018",
+		        "Rval": "0.843209683137518"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.270967,30.3680500008235]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "121130015",
+		        "Rval": "0.868825546560106"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.008033,30.394133000824]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "121130015",
+		        "Rval": "0.868825546560106"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-87.008033,30.394133000824]
+		      }
+		    },
+		    {
+		      "type": "Feature",
+		      "properties": {
+		        "siteid": "280590006",
+		        "Rval": "0.806770040693248"
+		      },
+		      "geometry": {
+		        "type": "Point",
+		        "coordinates": [-88.5339296135032,30.3782867218264]
+		      }
+		    }
+		  ]
+		}, style1);
+	</script>
+</body>
+</html>
